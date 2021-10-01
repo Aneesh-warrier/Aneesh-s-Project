@@ -1,0 +1,54 @@
+<!--
+  Generated template for the SupplierPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="mar">
+    <ion-title>Stock</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <input type="hidden" [(ngModel)]="item.id" />
+  <ion-item>
+    <ion-label stacked style="font-size: 18px">Item Name</ion-label>
+    <ion-input style="font-size: 18px" [(ngModel)]="item.itemname" type="text" [readonly]="readonly" placeholder="Item name"></ion-input>
+  </ion-item>
+  <input type="hidden" [(ngModel)]="item.current_quantity" />
+  <input type="hidden" [(ngModel)]="item.required_quantity" />
+
+  <ion-item>
+    <ion-label stacked style="font-size: 18px">Current Stock</ion-label>
+    <ion-input style="font-size: 18px" [(ngModel)]="item.current_quantity" type="number" [readonly]="readonly" placeholder="Current Stock"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label stacked style="font-size: 18px">Required Stock</ion-label>
+    <ion-input style="font-size: 18px" [(ngModel)]="item.required_quantity" type="number" [readonly]="readonly" placeholder="Required Stock"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label stacked style="font-size: 18px">Provided Stock</ion-label>
+    <ion-input style="font-size: 18px" [(ngModel)]="item.provided" type="number" placeholder="Provided Quantity"></ion-input>
+  </ion-item>
+  <!-- <ion-item>
+    <ion-label stacked>Total Amount</ion-label>
+    <ion-input [(ngModel)]="item.amount" type="text" placeholder="Total Amount"></ion-input>
+  </ion-item> -->
+  <!-- <ion-datetime displayFormat="MMM DD, h:mm A" [(ngModel)]="myDate"></ion-datetime> -->
+  <br>
+
+  <!-- <input type="hidden" [(ngModel)]="item.price" />
+  <input type="hidden" [(ngModel)]="item.added" /> -->
+
+
+  <button ion-button block color="mar" (click)="additem(item.id,item.itemname,item.current_quantity,item.required_quantity,item.provided,item.date)">
+    <span *ngIf="item.id">Update</span>
+    <span *ngIf="!item.id">update</span>
+  </button>
+
+
+</ion-content>

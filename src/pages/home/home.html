@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-navbar color="mar">
+    <ion-title>
+      Login
+    </ion-title>
+    <ion-avatar item-start (click) = "gotoAdmin()">
+      <!-- <img src="{{usr.avatar_urls[96]}}"> -->
+    </ion-avatar>
+  </ion-navbar>
+
+
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="loginForm" (submit)="loginUser()" novalidate>
+
+
+    <ion-item>
+      <ion-label stacked style="font-size: 16px">Email</ion-label>
+      <ion-input formControlName="email" type="email" placeholder="Your email address" [class.invalid]="!loginForm.controls.email.valid && blur">
+      </ion-input>
+    </ion-item>
+    <ion-item class="error-message" *ngIf="!loginForm.controls.email.valid &&
+             loginForm.controls.email.touched">
+      <p style="color: maroon;font-size:12px;">Please enter a valid email address.</p>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked style="font-size: large" style="font-size: 16px">Password</ion-label>
+      <ion-input formControlName="password" type="password" placeholder="Your password" [class.invalid]="!loginForm.controls.password.valid && blur">
+      </ion-input>
+    </ion-item>
+    <ion-item class="error-message" *ngIf="!loginForm.controls.password.valid 
+            && loginForm.controls.password.touched">
+      <p style="color: maroon;font-size:12px;">Your password needs atleast 8 characters.</p>
+    </ion-item>
+    <br>
+    <ion-list>
+    
+  </ion-list>
+
+    <br>
+    
+
+    <button ion-button color="mar" block type="submit" [disabled]="!loginForm.valid">
+      Log In
+    </button>
+  </form>
+  <ion-item>
+      <ion-checkbox [(ngModel)]="remember"></ion-checkbox>
+      <ion-label>Remember Me</ion-label>
+    </ion-item>
+    <!-- <input type="checkbox" id="remember_me" name="_remember_me" checked />
+    <label for="remember_me">Keep me logged in</label> -->
+  <button ion-button color="mar" block clear (click)="goToSignup()">Create a new account
+  </button>
+
+  <button ion-button color="mar" block clear (click)="goToResetPassword()">I forgot my password 🙁
+  </button>
+
+  <!-- <ion-list>
+    
+          <ion-item>
+            <ion-label>Username</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+        
+          <ion-item>
+            <ion-label>Password</ion-label>
+            <ion-input type="password"></ion-input>
+          </ion-item>
+        
+        </ion-list>
+        
+        <div padding>
+          <button block ion-button (click)="shop()">Sign In</button>
+          <button block ion-button (click)="register()">Register</button>
+        </div> -->
+</ion-content>

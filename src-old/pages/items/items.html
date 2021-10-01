@@ -1,0 +1,41 @@
+<!--
+  Generated template for the ItemsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="mar">
+    <ion-title>Edit Stock</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <input type="hidden" [(ngModel)]="item.id" />
+  <ion-item>
+    <ion-label stacked style="font-size: 18px">Item Name</ion-label>
+    <ion-input [(ngModel)]="item.itemname" type="text" placeholder="Item name"></ion-input>
+  </ion-item>
+  <input type="hidden" [(ngModel)]="item.changed_available" />
+  <input type="hidden" [(ngModel)]="item.changed_require" />
+  <ion-item>
+    <ion-label stacked style="font-size: 18px">unit</ion-label>
+    <ion-input [(ngModel)]="item.unit" type="text" placeholder="unit"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label stacked style="font-size: 18px">Current Stock</ion-label>
+    <ion-input [(ngModel)]="item.current_quantity" type="number" placeholder="Current Stock"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label stacked style="font-size: 18px">Required Stock</ion-label>
+    <ion-input [(ngModel)]="item.required_quantity" type="number" placeholder="Required Stock"></ion-input>
+  </ion-item>
+  <br>
+
+  <button ion-button block color="mar" (click)="additem(item.id,item.itemname,item.unit,item.current_quantity,item.required_quantity,item.changed_available, item.changed_require)">
+    <span *ngIf="item.id">Save</span>
+    <span *ngIf="!item.id">Save</span>
+  </button>
+
+
+</ion-content>

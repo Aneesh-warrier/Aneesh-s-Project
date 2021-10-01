@@ -1,0 +1,60 @@
+<!--
+  Generated template for the AddPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="mar">
+    <ion-title>Add New Stock</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="addForm" (submit)="addTask(newTask)" novalidate>
+    <ion-list>
+
+      <ion-item>
+        <ion-label stacked style="font-size: 18px">Item Name</ion-label>
+
+        <ion-input formControlName="itemname" type="text" [(ngModel)]="newTask.itemname" [class.invalid]="!addForm.controls.itemname.valid && blur"></ion-input>
+      </ion-item>
+      <ion-item class="error-message" *ngIf="!addForm.controls.itemname.valid  
+            && addForm.controls.itemname.touched">
+        <p style="color: maroon;font-size:15px;">Please enter the name of new item.</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked style="font-size: 18px">Unit</ion-label>
+        <ion-input formControlName="unit" type="text" [(ngModel)]="newTask.unit" [class.invalid]="!addForm.controls.unit.valid && blur"></ion-input>
+      </ion-item>
+      <ion-item class="error-message" *ngIf="!addForm.controls.unit.valid  
+            && addForm.controls.unit.touched">
+        <p style="color: maroon;font-size:15px;">Please enter the unit of item.</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked style="font-size: 18px">Current Stock</ion-label>
+        <ion-input formControlName="current_quantity" type="number" [(ngModel)]="newTask.current_quantity" [class.invalid]="!addForm.controls.current_quantity.valid && blur"></ion-input>
+      </ion-item>
+      <ion-item class="error-message" *ngIf="!addForm.controls.current_quantity.valid  
+            && addForm.controls.current_quantity.touched">
+        <p style="color: maroon;font-size:15px;">Please enter the current quantity of item</p>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked style="font-size: 18px">Required Stock</ion-label>
+        <ion-input formControlName="required_quantity" type="number" [(ngModel)]="newTask.required_quantity" [class.invalid]="!addForm.controls.required_quantity.valid && blur"></ion-input>
+      </ion-item>
+      <ion-item class="error-message" *ngIf="!addForm.controls.required_quantity.valid  
+            && addForm.controls.required_quantity.touched">
+        <p style="color: maroon;font-size:15px;">Please enter the required quantity of item</p>
+      </ion-item>
+      <br>
+
+      <button ion-button block style="float: right;" color="mar" type="submit" [disabled]="!addForm.valid">Add Stock</button>
+    </ion-list>
+  </form>
+
+</ion-content>

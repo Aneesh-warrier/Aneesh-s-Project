@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "188397433723",
+    "firebase_url": "https://webdestiny-cc208.firebaseio.com",
+    "project_id": "webdestiny-cc208",
+    "storage_bucket": "webdestiny-cc208.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:188397433723:android:f4e92771c1c81508b383de",
+        "android_client_info": {
+          "package_name": "com.webdestiny.sample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "188397433723-3kjbk7g24vb3rn7h0d3d5ees4bknki7d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSCket8jj3lNt66dvoUZmCtUDThG33mwg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "188397433723-3kjbk7g24vb3rn7h0d3d5ees4bknki7d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
